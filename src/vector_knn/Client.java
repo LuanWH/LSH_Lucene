@@ -395,39 +395,39 @@ public class Client {
 		System.out.println("LSH query total time: "+(end-start)+ "ms");
 	}
 	
-	public void printQuery(int num) throws Throwable{
-		BufferedReader buf = new BufferedReader(new InputStreamReader(new FileInputStream("data/query.txt")));
-		String line = buf.readLine();
-		String values[] = line.split(" ");
-		int[] query = new int[values.length];
-		for(int i = 0 ; i < values.length - 1; i++) {
-			query[i] = Integer.valueOf(values[i]);
-		}
-		Reader reader = new Reader("data/datafile.bin");
-		int count = 0;
-		reader.openReader();
-
-		while(count<=8638) {
-			int vec[] = reader.getFeature(128);
-
-			if(count == 8638){
-				long distance = 0;
-				String vecStr = "";
-				String queryStr= "";
-				for(int j = 0; j < 128; j++){
-					distance += ((query[j] - vec[j]) * (query[j] - vec[j]));
-					vecStr += vec[j]+" ";
-					queryStr += query[j]+" ";
-				}
-				System.out.println(vecStr);
-				System.out.println(queryStr);
-				System.out.println(distance+" "+vec[128]);
-			}
-			count++;
-
-		}
-		
-	}
+//	public void printQuery(int num) throws Throwable{
+//		BufferedReader buf = new BufferedReader(new InputStreamReader(new FileInputStream("data/query.txt")));
+//		String line = buf.readLine();
+//		String values[] = line.split(" ");
+//		int[] query = new int[values.length];
+//		for(int i = 0 ; i < values.length - 1; i++) {
+//			query[i] = Integer.valueOf(values[i]);
+//		}
+//		Reader reader = new Reader("data/datafile.bin");
+//		int count = 0;
+//		reader.openReader();
+//
+//		while(count<=8638) {
+//			int vec[] = reader.getFeature(128);
+//
+//			if(count == 8638){
+//				long distance = 0;
+//				String vecStr = "";
+//				String queryStr= "";
+//				for(int j = 0; j < 128; j++){
+//					distance += ((query[j] - vec[j]) * (query[j] - vec[j]));
+//					vecStr += vec[j]+" ";
+//					queryStr += query[j]+" ";
+//				}
+//				System.out.println(vecStr);
+//				System.out.println(queryStr);
+//				System.out.println(distance+" "+vec[128]);
+//			}
+//			count++;
+//
+//		}
+//		
+//	}
 		
 	public static void main(String args[]) throws Throwable {
 		
