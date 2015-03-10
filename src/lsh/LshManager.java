@@ -139,15 +139,15 @@ public class LshManager {
 				combinedhashArray[j] = combinedHash.get(j);
 			}
 			jclient.addPairs(
-							key
-			                , this.numberOfHashTables
-			                , combinedhashArray
+							key  //id for data point
+			                , this.numberOfHashTables  // 
+			                , combinedhashArray  // hash value
 			                , 32
 							, Index.VECTOR_BUILD
 							);
 
-			if(i % 10000 == 0)
-				System.out.println(i);
+		//	if(i % 10000 == 0)
+		//		System.out.println(i);
 		}
 		
 		jclient.flush();
