@@ -55,7 +55,7 @@ public class LshManager {
 		sqlManager = new SQLManager();
 	}
 	
-	public void configure(int numberOfHashTables, int numberOfHashes, int numberOfNeighbours, int radius){
+	public void configure(int numberOfHashTables, int numberOfHashes, int numberOfNeighbours, double radius){
 		this.dimensions = 128;
 		this.numberOfHashTables = numberOfHashTables;
 		this.numberOfHashes = numberOfHashes;
