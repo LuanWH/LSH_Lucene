@@ -145,7 +145,6 @@ public class LshManager {
 			                , 32
 							, Index.VECTOR_BUILD
 							);
-
 		//	if(i % 10000 == 0)
 		//		System.out.println(i);
 		}

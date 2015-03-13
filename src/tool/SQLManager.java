@@ -9,6 +9,8 @@ import java.util.List;
 
 import lsh.Vector;
 
+import vector_knn.Parameters;
+
 public class SQLManager {
 
 	static final boolean test = true;
@@ -37,11 +39,11 @@ public class SQLManager {
 			String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS yichao_lucene;";
 			String sqlSelectDB = "USE yichao_lucene";
 			String sqlCreateTable = "CREATE TABLE dataset(";
-			sqlCreateTable += "vector_key int,";
-			for (int i = 0; i < 127; i++) {
+			sqlCreateTable += "vector_key int pramary key,";
+			for (int i = 0; i < Parameters.NUM_DIM; i++) {
 				sqlCreateTable += "value" + i + " bigint,";
 			}
-			sqlCreateTable += "value127 Long";
+			//sqlCreateTable += "value127 Long";
 			sqlCreateTable += ")";
 			stmt.execute(sqlCreateDB);
 			stmt.execute(sqlSelectDB);
@@ -171,8 +173,8 @@ public class SQLManager {
 			while (rs.next()) {
 				// Retrieve by column name
 				long id = rs.getLong("vector_key");
-				double[] values = new double[128];
-				for(int i = 0; i < 128; i++){
+				double[] values = new double[Parameters.NUM_DIM];
+				for(int i = 0; i < Parameters.NUM_DIM; i++){
 					values[i] = rs.getInt("value"+i);
 				}
 				vector = new Vector(id, values);
@@ -211,7 +213,7 @@ public class SQLManager {
 	}
 	
 	public static void main(String[] args){
-		String dataFile = "LSHfile_1_100000.txt";
+		String dataFile = Parameters.dataFile;
 		long[] keys = new long[] {0, 2};
 		
 		SQLManager sqlManager = new SQLManager();
