@@ -213,7 +213,7 @@ public class SQLManager {
 	}
 	
 	public static void main(String[] args){
-		String dataFile = Parameters.dataFile;
+		String dataFile = Parameters.DATA_FILE_STRING;
 		long[] keys = new long[] {0, 2};
 		
 		SQLManager sqlManager = new SQLManager();

@@ -12,16 +12,17 @@ public class Parameters {
 	public static final int MAX = 1;
 	
 	
-	public static String dataFile = "LSHfile_1_100000.txt"; 
+	public static String DATA_FILE_STRING = "LSHfile_1_100000.txt"; 
 	
-	private static int vec_num;
-	private static int nodes_num;
-	private static int hashtable_num;
-	private static int hash_num;
-	private static int neighbor_num;
-	private static double radius;
-	private static String vec_index = "Index"+vec_num;
-	private static String vec_scanfile = "Scanfile"+vec_num;
-	private static String vec_lshindex = "LSHfile"+vec_num;
+	public static int VEC_NUM = 100000;
+	public static int NODES_NUM = 1;
+	public static int HASHTABLE_NUM = 7;
+	public static int HASH_NUM = 14 ;
+	public static int NEIGHBOR_NUM =10;
+	public static double RADIUS = 120;
+	public static String VEC_INDEX_STRING = "Index_"+NODES_NUM+"_"+VEC_NUM;
+	public static String VEC_SCANFILE_STRING = "Scanfile_"+NODES_NUM+"_"+VEC_NUM+".bin";
+	public static String VEC_LSHINDEX_STRING = "LSHfile_"+NODES_NUM+"_"+VEC_NUM+"_"+HASHTABLE_NUM+"_"+HASH_NUM+"_"+NEIGHBOR_NUM+"_"+RADIUS;
+
 	
 }

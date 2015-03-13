@@ -32,9 +32,9 @@ public class Client {
 	private static int hash_num;
 	private static int neighbor_num;
 	private static double radius;
-	private static String vec_index = "Index"+vec_num;
-	private static String vec_scanfile = "Scanfile"+vec_num;
-	private static String vec_lshindex = "LSHfile"+vec_num;
+	private static String vec_index ;
+	private static String vec_scanfile ;
+	private static String vec_lshindex ;
 	
 	Client(String ip) throws Throwable {
 		
@@ -400,12 +400,12 @@ public class Client {
 		String datafile = "data/datafile.bin";
 		Client c = new Client("socket://127.0.0.1:8888");
 //		Client c = new Client("socket://137.132.145.132:8888");
-		vec_num = 100000;
-		nodes_num = 1;
-		hashtable_num = 7;
-		hash_num = 14;
-		neighbor_num = 10;
-		radius = 0.01;
+		vec_num = Parameters.VEC_NUM;
+		nodes_num = Parameters.NODES_NUM;
+		hashtable_num = Parameters.HASHTABLE_NUM;
+		hash_num = Parameters.HASH_NUM;
+		neighbor_num = Parameters.NEIGHBOR_NUM;
+		radius = Parameters.RADIUS;
 		vec_index = "Index_"+nodes_num+"_"+vec_num;
 		vec_scanfile = "Scanfile_"+nodes_num+"_"+vec_num+".bin";
 		vec_lshindex = "LSHfile_"+nodes_num+"_"+vec_num+"_"+hashtable_num+"_"+hash_num+"_"+neighbor_num+"_"+radius;
